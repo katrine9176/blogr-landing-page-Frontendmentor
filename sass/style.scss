@@ -1,0 +1,739 @@
+@use 'colors' as *;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.6rem;
+	overflow-x: hidden;
+}
+
+button {
+	font-family: 'Ubuntu', sans-serif;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.close {
+	display: none;
+}
+
+.change-color {
+	opacity: 75%;
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+.header {
+	position: relative;
+	height: 500px;
+	background: $header-gradient;
+	border-bottom-left-radius: 80px;
+
+	.shapes {
+		width: 100%;
+		height: 100%;
+		background-image: url('../images/bg-pattern-intro-mobile.svg');
+		background-position: 40% 40%;
+		border-bottom-left-radius: 80px;
+	}
+
+	.text {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 1em;
+		top: 175px;
+		text-align: center;
+		font-family: 'Overpass', sans-serif;
+		color: $white;
+		z-index: 0;
+
+		h1 {
+			font-size: 3.2rem;
+			margin-bottom: 0.5em;
+		}
+
+		p {
+			font-size: 1.7rem;
+		}
+
+		.text-btns {
+			display: flex;
+			flex-direction: row;
+			margin-top: 1em;
+
+			.btn {
+				padding: 1em;
+				width: 143px;
+				font-weight: bold;
+				border-radius: 20px;
+			}
+
+			.btn-1 {
+				color: $red;
+				background-color: $white;
+				margin-right: 0.5em;
+			}
+
+			.btn-2 {
+				color: $white;
+				border: solid 1px $white;
+			}
+		}
+	}
+
+	.nav {
+		position: absolute;
+		padding: 0 1.5em;
+		width: 100%;
+		top: 40px;
+		z-index: 1;
+
+		.logo {
+			height: 32px;
+		}
+
+		.burger {
+			position: absolute;
+			top: 3.5px;
+			right: 1.5em;
+		}
+
+		.burger-c {
+			top: 3.1px;
+			right: 1.7em;
+		}
+
+		.toggle-box {
+			position: relative;
+			box-shadow: hsl(203, 4%, 63%) 0 3px 15px;
+			right: -992px;
+			transition: right 0.2s;
+			background-color: $white;
+			border-radius: 5px;
+
+			.links {
+				margin: 2em 0;
+				padding: 1.5em 1em;
+				text-align: center;
+
+				a {
+					color: $dark-blue;
+				}
+
+				.link-box {
+					position: relative;
+					padding: 1em;
+
+					img {
+						top: 5px;
+					}
+
+					a:hover {
+						text-decoration: underline;
+					}
+
+					.arrow-close {
+						margin-bottom: 2px;
+						transform: rotate(180deg);
+					}
+
+					.toggle-links {
+						margin-top: 0.8em;
+						padding: 1em;
+						list-style: none;
+						background-color: $gray;
+
+						li {
+							padding: 0.3em;
+							font-size: 1.5rem;
+							opacity: 75%;
+						}
+					}
+				}
+			}
+
+			.line {
+				margin: -2.5em auto 2em;
+				height: 1px;
+				width: 80%;
+				background-color: $dark-blue;
+				opacity: 10%;
+			}
+
+			.btns {
+				display: flex;
+				flex-direction: column;
+
+				button {
+					font-size: 1.5rem;
+					margin-bottom: 1.5em;
+					transition: opacity 0.3s;
+
+					&:hover {
+						opacity: 80%;
+					}
+				}
+
+				.btn-login {
+					color: $dark-blue;
+				}
+
+				.btn-sign-up {
+					padding: 0.8em;
+					margin: 0 auto 1.5em;
+					width: 100px;
+					font-weight: bold;
+					color: $white;
+					background: $btn-gradient;
+					border-radius: 20px;
+				}
+			}
+		}
+
+		.close {
+			display: none;
+		}
+
+		.open {
+			right: 0;
+		}
+	}
+}
+
+.main {
+	margin-top: 4em;
+
+	.section {
+		padding: 3em 1em;
+		text-align: center;
+		font-family: 'Overpass', sans-serif;
+
+		h2,
+		h3 {
+			color: $dark-blue;
+		}
+
+		.editor,
+		.laptop {
+			margin: 1.5em 0;
+			width: 300px;
+		}
+
+		.big-editor,
+		.big-laptop {
+			display: none;
+		}
+
+		.phones {
+			width: 300px;
+		}
+
+		.circles {
+			width: 300px;
+		}
+
+		.block {
+			padding: 1em;
+
+			h3 {
+				margin-bottom: 0.5em;
+				font-size: 2.2rem;
+			}
+
+			p {
+				font-size: 1.5rem;
+				color: $dark-gray;
+			}
+		}
+	}
+
+	.infrastructure {
+		margin-top: 6em;
+		position: relative;
+		border-top-right-radius: 80px;
+		border-bottom-left-radius: 80px;
+		background-color: $darker-blue;
+		background-image: url('../images/bg-pattern-circles.svg');
+		background-repeat: no-repeat;
+		background-attachment: inherit;
+		background-position: 50% -130px;
+		background-clip: padding-box;
+		background-origin: padding-box;
+		background-size: contain;
+		color: $white;
+
+		.phones {
+			position: absolute;
+			top: -110px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		h2 {
+			font-size: 3rem;
+			margin-top: 5em;
+			margin-bottom: 0.5em;
+			color: $white;
+		}
+
+		p {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+.footer {
+	padding: 4em;
+	text-align: center;
+	border-top-right-radius: 70px;
+	background-color: $very-dark-blue;
+
+	.block {
+		margin: 2em;
+
+		p a {
+			color: $footer-text;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.bold {
+			font-weight: bold;
+			color: $footer-text;
+			margin-bottom: 0.5em;
+		}
+	}
+
+	.attribution {
+		padding: 1em;
+		color: $footer-text;
+		font-size: 1.1rem;
+		text-align: center;
+
+		a {
+			color: hsl(228, 45%, 44%);
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.header {
+		.text {
+			width: 400px;
+
+			h1 {
+				font-size: 3.8rem;
+			}
+
+			p {
+				font-size: 1.9rem;
+			}
+
+			.text-btns {
+				margin-top: 1.5em;
+				justify-content: center;
+
+				.btn {
+					width: 160px;
+					font-size: 1.5rem;
+					border-radius: 50px;
+				}
+			}
+		}
+
+		.nav {
+			padding: 0 2em;
+
+			.burger {
+				right: 2em;
+			}
+
+			.toggle-box .links .link-box {
+				font-size: 1.8rem;
+
+				.toggle-links li {
+					font-size: 1.65rem;
+				}
+			}
+
+			.toggle-box .btns button {
+				font-size: 1.7rem;
+			}
+
+			.toggle-box .btns .btn-sign-up {
+				border-radius: 60px;
+			}
+		}
+	}
+
+	.main {
+		.section {
+			h2 {
+				font-size: 3rem;
+			}
+
+			h3 {
+				font-size: 2.4rem;
+			}
+
+			p {
+				font-size: 1.7rem;
+			}
+		}
+
+		.infrastructure {
+			p {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.header {
+		display: flex;
+		justify-content: center;
+
+		.shapes {
+			background-image: url('../images/bg-pattern-intro-desktop.svg');
+			background-position: 45% 45%;
+		}
+
+		.nav {
+			top: 55px;
+			max-width: 1200px;
+
+			.burger {
+				display: none;
+			}
+
+			.logo {
+				height: 45px;
+			}
+
+			.toggle-box {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: transparent;
+				box-shadow: none;
+
+				.line {
+					display: none;
+				}
+
+				.links {
+					position: absolute;
+					top: -65px;
+					left: 160px;
+					display: flex;
+					text-align: left;
+					z-index: 10;
+				}
+
+				.links .link-box {
+					.head {
+						color: $white;
+					}
+
+					.toggle-links {
+						background-color: $white;
+					}
+				}
+
+				.btns {
+					position: relative;
+					top: -4px;
+					right: 60px;
+					flex-direction: row;
+					justify-content: end;
+
+					.btn {
+						&-login {
+							top: 14px;
+							position: absolute;
+							left: 900px;
+							color: $white;
+						}
+
+						&-sign-up {
+							background-image: none;
+							background-color: $white;
+							color: $red;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.main {
+		.with-picture {
+			position: relative;
+			padding-top: 8em;
+
+			.wrapper {
+				padding-left: 1em;
+			}
+
+			h2 {
+				font-size: 3.5rem;
+				padding-bottom: 1.5em;
+			}
+
+			.editor {
+				display: none;
+			}
+
+			.big-editor {
+				top: 140px;
+				display: block;
+				position: absolute;
+				right: -170px;
+				width: 650px;
+			}
+
+			.block {
+				margin-left: 2em;
+				text-align: left;
+				width: 500px;
+			}
+
+			.one {
+				margin-top: 60px;
+			}
+		}
+
+		.with-laptop {
+			position: relative;
+
+			.big-laptop {
+				display: block;
+				position: absolute;
+				top: 20px;
+				left: -210px;
+				width: 750px;
+			}
+
+			.laptop {
+				display: none;
+			}
+
+			.block {
+				margin-left: 30em;
+				text-align: left;
+				width: 500px;
+			}
+
+			.one {
+				margin-top: 145px;
+			}
+		}
+
+		.infrastructure {
+			margin-top: 20em;
+			padding: 5em 2em;
+
+			.wrapper {
+				position: relative;
+				display: flex;
+				justify-content: end;
+			}
+
+			.phones {
+				top: -180px;
+				width: 470px;
+				left: 190px;
+			}
+
+			.text {
+				margin-top: -110px;
+				width: 560px;
+				text-align: left;
+
+				h2 {
+					font-size: 3.5rem;
+				}
+			}
+		}
+	}
+
+	.footer {
+		margin-top: 6em;
+
+		.wrapper {
+			display: flex;
+
+			.block {
+				width: 400px;
+
+				.bold {
+					margin-bottom: 1.5em;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.header .nav .toggle-box {
+		.btns .btn-login {
+			left: 950px;
+		}
+
+		.links .link-box .arrow-open {
+			color: $white;
+		}
+	}
+
+	.main {
+		.with-picture {
+			.wrapper {
+				padding-left: 0;
+			}
+
+			.block {
+				width: 600px;
+				padding-top: 4em;
+				margin-left: 0;
+			}
+
+			.big-editor {
+				width: 750px;
+			}
+		}
+
+		.with-laptop {
+			.big-laptop {
+				left: -230px;
+				width: 870px;
+			}
+
+			.block {
+				margin-left: 40em;
+			}
+
+			.one {
+				margin-top: 180px;
+			}
+		}
+
+		.infrastructure {
+			padding: 6em;
+			background-position: -600px -1200px;
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			.phones {
+				top: -180px;
+				width: 500px;
+				left: 190px;
+			}
+
+			.text {
+				margin-top: -110px;
+				width: 590px;
+				text-align: left;
+
+				h2 {
+					font-size: 3.5rem;
+				}
+			}
+		}
+	}
+
+	.footer {
+		margin-top: 10em;
+	}
+}
+
+@media (min-width: 1400px) {
+	.main {
+		.with-picture {
+			.big-editor {
+				top: 70px;
+				right: -220px;
+				width: 850px;
+			}
+
+			.one {
+				margin-top: 30px;
+			}
+
+			.block {
+				width: 700px;
+
+				p {
+					font-size: 1.7rem;
+				}
+			}
+		}
+
+		.with-laptop {
+			.big-laptop {
+				width: 900px;
+				left: -250px;
+			}
+
+			.block {
+				margin-left: 25em;
+				width: 800px;
+
+				h3 {
+					font-size: 3rem;
+				}
+
+				font-size: 1.9rem;
+			}
+
+			.one {
+				margin-top: 200px;
+			}
+		}
+
+		.infrastructure {
+			.phones {
+				left: 225px;
+			}
+
+			.text {
+				margin-top: -140px;
+				margin-right: 4em;
+				width: 590px;
+				text-align: left;
+
+				h2 {
+					font-size: 3.8rem;
+				}
+
+				p {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+}
