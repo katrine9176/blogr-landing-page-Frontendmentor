@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution URL](https://github.com/katrine9176/blogr-landing-page-Frontendmentor)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live URL](https://katrine9176.github.io/blogr-landing-page-Frontendmentor/)
 
 ## My process
 
